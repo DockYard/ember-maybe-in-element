@@ -16,6 +16,12 @@ to:
 {{#if renderInPlace}}The block{{else}}{{#-in-element el}}The block{{/-in-element}}{{/if}}
 ```
 
+## Motivation
+
+Although nothing prevents you from achieving the same thing by manually typing the expanded
+handlebars code yourself, having two identical blocks is an invitation to forget to update one and introduce unwanted differences between both.
+Also, less typing!
+
 ## Installation
 
 The addon requires `#-in-element` to exist, so the minimum version of Ember supported is 2.10.
