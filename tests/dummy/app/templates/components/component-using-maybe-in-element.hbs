@@ -1,0 +1,6 @@
+<div id="original-placement" style="padding: 10px; border: 2px dashed blue;">
+  {{#maybe-in-element destinationElement renderInPlace}}Hello world{{/maybe-in-element}}
+  {{!-- {{#-in-element destinationElement}}Hello world{{/-in-element}} --}}
+</div>
+<label for="toggle-in-place">Render in place</label>
+<input type="checkbox" id="toggle-in-place" checked={{renderInPlace}} onchange={{action "toggleRenderInPlace"}} >
