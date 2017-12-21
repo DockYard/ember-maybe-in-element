@@ -26,7 +26,9 @@ Also, less typing!
 
 The addon requires `#-in-element` to exist, so the minimum version of Ember supported is 2.10.
 
-
 * Run `ember install ember-maybe-in-element`
+
+Be aware that if you intend to use this addon from within another addon, you must move it from
+`devDependencies` to `dependencies` in your `package.json`.
 
 
