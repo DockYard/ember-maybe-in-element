@@ -3,15 +3,18 @@
   "version": "0.1.0",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "in-element",
+    "wormhole",
+    "portal"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Miguel Camba",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/DockYard/ember-maybe-in-element",
   "scripts": {
     "build": "ember build",
     "start": "ember serve",

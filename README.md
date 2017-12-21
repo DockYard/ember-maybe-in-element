@@ -32,3 +32,10 @@ Be aware that if you intend to use this addon from within another addon, you mus
 `devDependencies` to `dependencies` in your `package.json`.
 
 
+## Legal
+
+[DockYard](http://dockyard.com/ember-consulting), Inc &copy; 2016
+
+[@dockyard](http://twitter.com/dockyard)
+
+[Licensed under the MIT license](http://www.opensource.org/licenses/mit-license.php)
