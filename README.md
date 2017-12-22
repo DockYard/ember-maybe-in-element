@@ -34,7 +34,7 @@ Be aware that if you intend to use this addon from within another addon, you mus
 
 ## Legal
 
-[DockYard](http://dockyard.com/ember-consulting), Inc &copy; 2016
+[DockYard](http://dockyard.com/ember-consulting), Inc &copy; 2017
 
 [@dockyard](http://twitter.com/dockyard)
 
