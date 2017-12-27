@@ -49,4 +49,20 @@ module('Integration | maybe-in-element', function(hooks) {
     assert.dom('#test-destination-element').containsText('Some text', 'The content has been rendered in the destination element');
     assert.dom('#original-placement').doesNotContainText('Some text', 'The content wasn\'t rendered in the original location');
   });
+
+  test('It preserves context for actions', async function(assert) {
+    assert.expect(0);
+    this.renderInPlace = false;
+    this.actions = {
+      test() {}
+    };
+    await render(hbs`
+      <div id="test-destination-element"></div>
+      {{#if ready}}
+        {{#maybe-in-element destinationElement renderInPlace}}<button onclick={{action "test"}}>Some text</button>{{/maybe-in-element}}
+      {{/if}}
+    `);
+    this.set('destinationElement', this.element.querySelector('#test-destination-element'));
+    this.set('ready', true);
+  });
 });
