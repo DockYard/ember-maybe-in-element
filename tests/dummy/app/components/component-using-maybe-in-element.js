@@ -14,6 +14,10 @@ export default Component.extend({
       this.set('renderInPlace', !this.get('renderInPlace'));
     },
 
+    logClick() {
+      alert('click event!');
+    },
+
     changeDestination() {
       if (this.get('id') === '#in-element-destination') {
         this.set('id', '#in-element-destination2');
