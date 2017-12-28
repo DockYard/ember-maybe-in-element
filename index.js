@@ -9,7 +9,10 @@ module.exports = {
   setupPreprocessorRegistry(type, registry) {
     registry.add('htmlbars-ast-plugin', {
       name: 'ember-maybe-in-element-transform',
-      plugin: EmberMaybeInElementAstTransform
+      plugin: EmberMaybeInElementAstTransform,
+      baseDir() {
+        return __dirname;
+      }
     });
   },
 };
