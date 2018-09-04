@@ -1,4 +1,3 @@
-/* eslint-env node */
 'use strict';
 
 const EmberMaybeInElementAstTransform = require('./lib/ast-transform')
