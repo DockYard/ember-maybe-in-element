@@ -1,5 +1,5 @@
 <div id="original-placement" style="padding: 10px; border: 2px dashed blue;">
-  {{#maybe-in-element destinationElement renderInPlace}}<div onclick={{action "logClick"}}>Hello world</div>{{/maybe-in-element}}
+  {{#maybe-in-element destinationElement renderInPlace insertBefore=null}}<div onclick={{action "logClick"}}>Hello world</div>{{/maybe-in-element}}
   {{!-- {{#if renderInPlace}}
     <div onclick={{action "logClick"}}>Hello world</div>
   {{else}}
