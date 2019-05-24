@@ -24,7 +24,7 @@ Also, less typing!
 
 ## Installation
 
-The addon requires `#-in-element` to exist, so the minimum version of Ember supported is 2.10.
+The addon uses `ember-in-element-polyfill`, so its support matrix is the same (2.10+ at the time of this writing)
 
 * Run `ember install ember-maybe-in-element`
 

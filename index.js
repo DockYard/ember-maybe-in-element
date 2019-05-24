@@ -3,7 +3,7 @@
 const EmberMaybeInElementAstTransform = require('./lib/ast-transform')
 
 module.exports = {
-  name: 'ember-maybe-in-element',
+  name: require('./package').name,
 
   setupPreprocessorRegistry(type, registry) {
     registry.add('htmlbars-ast-plugin', {
