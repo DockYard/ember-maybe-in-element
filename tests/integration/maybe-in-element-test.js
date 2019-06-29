@@ -11,7 +11,7 @@ module('Integration | maybe-in-element', function(hooks) {
     await render(hbs`
       <div id="test-destination-element"></div>
       {{#if ready}}
-        {{#maybe-in-element destinationElement renderInPlace}}Some text{{/maybe-in-element}}
+        {{#maybe-in-element destinationElement renderInPlace insertBefore=null}}Some text{{/maybe-in-element}}
       {{/if}}
     `);
     this.set('destinationElement', this.element.querySelector('#test-destination-element'));
@@ -24,7 +24,7 @@ module('Integration | maybe-in-element', function(hooks) {
     await render(hbs`
       <div id="test-destination-element"></div>
       {{#if ready}}
-        <div id="original-placement">{{#maybe-in-element destinationElement renderInPlace}}Some text{{/maybe-in-element}}</div>
+        <div id="original-placement">{{#maybe-in-element destinationElement renderInPlace insertBefore=null}}Some text{{/maybe-in-element}}</div>
       {{/if}}
     `);
     this.set('destinationElement', this.element.querySelector('#test-destination-element'));
@@ -38,7 +38,7 @@ module('Integration | maybe-in-element', function(hooks) {
     await render(hbs`
       <div id="test-destination-element"></div>
       {{#if ready}}
-        <div id="original-placement">{{#maybe-in-element destinationElement renderInPlace}}Some text{{/maybe-in-element}}</div>
+        <div id="original-placement">{{#maybe-in-element destinationElement renderInPlace insertBefore=null}}Some text{{/maybe-in-element}}</div>
       {{/if}}
     `);
     this.set('destinationElement', this.element.querySelector('#test-destination-element'));
@@ -59,7 +59,7 @@ module('Integration | maybe-in-element', function(hooks) {
     await render(hbs`
       <div id="test-destination-element"></div>
       {{#if ready}}
-        {{#maybe-in-element destinationElement renderInPlace}}<button onclick={{action "test"}}>Some text</button>{{/maybe-in-element}}
+        {{#maybe-in-element destinationElement renderInPlace insertBefore=null}}<button onclick={{action "test"}}>Some text</button>{{/maybe-in-element}}
       {{/if}}
     `);
     this.set('destinationElement', this.element.querySelector('#test-destination-element'));
