@@ -13,7 +13,7 @@ Essentially, it statically transforms:
 to:
 
 ```hbs
-{{#if renderInPlace}}The block{{else}}{{#in-element el insertBefore=null}}The block{{/-in-element}}{{/if}}
+{{#if renderInPlace}}The block{{else}}{{#in-element el insertBefore=null}}The block{{/in-element}}{{/if}}
 ```
 
 ## Motivation

@@ -3,11 +3,11 @@
   {{!-- {{#if renderInPlace}}
     <div onclick={{action "logClick"}}>Hello world</div>
   {{else}}
-    {{#-in-element destinationElement}}<div onclick={{action "logClick"}}>Hello world</div>{{/-in-element}}
+    {{#in-element destinationElement}}<div onclick={{action "logClick"}}>Hello world</div>{{/in-element}}
   {{/if}} --}}
   {{!-- {{#maybe-in-element destinationElement renderInPlace}}<div onclick={{action "logClick"}}>Hello world</div>{{/maybe-in-element}} --}}
-  {{!-- {{#-in-element destinationElement}}<div onclick={{action "logClick"}}>Hello world</div>{{/-in-element}} --}}
-  {{!-- {{#-in-element destinationElement}}Hello world{{/-in-element}} --}}
+  {{!-- {{#in-element destinationElement}}<div onclick={{action "logClick"}}>Hello world</div>{{/in-element}} --}}
+  {{!-- {{#in-element destinationElement}}Hello world{{/in-element}} --}}
 </div>
 <label for="toggle-in-place">Render in place</label>
 <input type="checkbox" id="toggle-in-place" checked={{renderInPlace}} onchange={{action "toggleRenderInPlace"}} >
