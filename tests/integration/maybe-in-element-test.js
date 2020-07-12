@@ -53,13 +53,11 @@ module('Integration | maybe-in-element', function(hooks) {
   test('It preserves context for actions', async function(assert) {
     assert.expect(0);
     this.renderInPlace = false;
-    this.actions = {
-      test() {}
-    };
+    this.test = () => {};
     await render(hbs`
       <div id="test-destination-element"></div>
       {{#if ready}}
-        {{#maybe-in-element destinationElement renderInPlace insertBefore=null}}<button onclick={{action "test"}}>Some text</button>{{/maybe-in-element}}
+        {{#maybe-in-element destinationElement renderInPlace insertBefore=null}}<button onclick={{this.test}}>Some text</button>{{/maybe-in-element}}
       {{/if}}
     `);
     this.set('destinationElement', this.element.querySelector('#test-destination-element'));
