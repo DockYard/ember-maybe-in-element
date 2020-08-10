@@ -1,29 +1,30 @@
 import Component from '@ember/component';
-import { computed } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 
-export default Component.extend({
-  renderInPlace: false,
-  id: '#in-element-destination',
+export default class extends Component {
+  @tracked renderInPlace = false;
+  @tracked id = '#in-element-destination';
 
-  destinationElement: computed('id', function() {
-    return document.querySelector(this.get('id'));
-  }),
+  get destinationElement() {
+    return document.querySelector(this.id);
+  }
 
-  actions: {
-    toggleRenderInPlace() {
-      this.set('renderInPlace', !this.get('renderInPlace'));
-    },
+  @action
+  toggleRenderInPlace() {
+    this.renderInPlace = !this.renderInPlace;
+  }
 
-    logClick() {
-      alert('click event!');
-    },
-
-    changeDestination() {
-      if (this.get('id') === '#in-element-destination') {
-        this.set('id', '#in-element-destination2');
-      } else {
-        this.set('id', '#in-element-destination');
-      }
+  @action
+  changeDestination() {
+    if (this.id === '#in-element-destination') {
+      this.id = '#in-element-destination2';
+    } else {
+      this.id = '#in-element-destination';
     }
   }
-});
+
+  logClick() {
+    alert('click event!');
+  }
+}

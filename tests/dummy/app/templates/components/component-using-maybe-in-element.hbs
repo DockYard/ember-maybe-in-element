@@ -1,5 +1,5 @@
 <div id="original-placement" style="padding: 10px; border: 2px dashed blue;">
-  {{#maybe-in-element destinationElement renderInPlace insertBefore=null}}<div onclick={{action "logClick"}}>Hello world</div>{{/maybe-in-element}}
+  {{#maybe-in-element this.destinationElement this.renderInPlace insertBefore=null}}<div {{on "click" this.logClick}}>Hello world</div>{{/maybe-in-element}}
   {{!-- {{#if renderInPlace}}
     <div onclick={{action "logClick"}}>Hello world</div>
   {{else}}
@@ -10,5 +10,5 @@
   {{!-- {{#in-element destinationElement}}Hello world{{/in-element}} --}}
 </div>
 <label for="toggle-in-place">Render in place</label>
-<input type="checkbox" id="toggle-in-place" checked={{renderInPlace}} onchange={{action "toggleRenderInPlace"}} >
-<button onclick={{action "changeDestination"}}>Toggle destination</button>
+<input type="checkbox" id="toggle-in-place" checked={{this.renderInPlace}} {{on "change" this.toggleRenderInPlace}}>
+<button type="button" {{on "click" this.changeDestination}}>Toggle destination</button>
