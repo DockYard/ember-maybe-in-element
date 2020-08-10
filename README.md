@@ -2,15 +2,20 @@
 
 This addon exposes the construct `{{#maybe-in-element el renderInPlace insertBefore=null}}The block{{/maybe-in-element}}` to the contained block somewhere else in the page.
 
-Despite its syntax, it's not implemented as a component but as an AST transform.
+Compatibility
+------------------------------------------------------------------------------
 
-Essentially, it statically transforms:
+* Ember.js v3.12 or above
+* Ember CLI v2.13 or above
+* Node.js v10 or above
 
+
+The code
 ```hbs
 {{#maybe-in-element el renderInPlace insertBefore=null}}The block{{/maybe-in-element}}
 ```
 
-to:
+becomes equivalent to:
 
 ```hbs
 {{#if renderInPlace}}The block{{else}}{{#in-element el insertBefore=null}}The block{{/in-element}}{{/if}}
