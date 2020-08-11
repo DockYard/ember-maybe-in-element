@@ -1,6 +1,6 @@
 {
   "name": "ember-maybe-in-element",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Ember AST transform for the in-element helper",
   "keywords": [
     "ember-addon",
