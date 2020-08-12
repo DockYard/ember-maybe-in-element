@@ -1,20 +1,20 @@
 'use strict';
-
-const EmberMaybeInElementAstTransform = require('./lib/ast-transform')
+const VersionChecker = require('ember-cli-version-checker');
+const buildAstTransform = require('./lib/ast-transform')
 
 module.exports = {
   name: require('./package').name,
 
   setupPreprocessorRegistry(type, registry) {
-    let plugins = registry.load('htmlbars-ast-plugin');
-    let inElementPlugin = plugins.find((plugin) => plugin.name === 'ember-in-element-polyfill');
+    let checker = new VersionChecker(this.project);
+    let dep = checker.for('ember-source');
     let maybePlugin = {
       name: 'ember-maybe-in-element-transform',
-      plugin: EmberMaybeInElementAstTransform,
+      plugin: buildAstTransform(dep.gte('3.17.0')),
       baseDir() {
         return __dirname;
-      }
+      },
     };
-    registry.add("htmlbars-ast-plugin", maybePlugin);
+    registry.add('htmlbars-ast-plugin', maybePlugin);
   },
 };
