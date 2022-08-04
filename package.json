@@ -1,6 +1,7 @@
 {
   "name": "@runspired-forks/ember-maybe-in-element",
   "version": "1.0.1",
+  "public": true,
   "description": "Ember AST transform for the in-element helper",
   "keywords": [
     "ember-addon",
