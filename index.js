@@ -7,22 +7,23 @@ module.exports = {
 
   setupPreprocessorRegistry(type, registry) {
     if (type !== 'parent') {
-			return;
-		}
+      return;
+    }
     let checker = new VersionChecker(this.project);
     let dep = checker.for('ember-source');
     let version = dep.gte('3.17.0');
-		const plugin = this._buildPlugin({ version });
+    const options = { version };
+    const plugin = this._buildPlugin(options);
     plugin.parallelBabel = {
-			requireFile: __filename,
-			buildUsing: '_buildPlugin',
-			params: options,
-		};
+      requireFile: __filename,
+      buildUsing: '_buildPlugin',
+      params: options,
+    };
 
     registry.add('htmlbars-ast-plugin', plugin);
   },
 
-	_buildPlugin(options) {
+  _buildPlugin(options) {
     return {
       name: 'ember-maybe-in-element-transform',
       plugin: buildAstTransform(options.version),
@@ -30,5 +31,5 @@ module.exports = {
         return __dirname;
       },
     };
-	},
+  },
 };
