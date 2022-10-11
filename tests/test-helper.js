@@ -3,6 +3,10 @@ import config from 'dummy/config/environment';
 import { setApplication } from '@ember/test-helpers';
 import { start } from 'ember-qunit';
 
-setApplication(Application.create(config.APP));
+import { setup } from 'qunit-dom';
+import * as QUnit from 'qunit';
 
-start();
+setup(QUnit.assert);
+
+setApplication(Application.create(config.APP));
+start({ setupEmberOnerrorValidation: false, setupTestIsolationValidation: true });
