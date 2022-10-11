@@ -9,7 +9,7 @@
     "wormhole",
     "portal"
   ],
-  "repository": "https://github.com/runspired/ember-maybe-in-element",
+  "repository": "https://github.com/DockYard/ember-maybe-in-element",
   "license": "MIT",
   "author": "Miguel Camba",
   "directories": {
